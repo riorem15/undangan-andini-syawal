@@ -1,0 +1,106 @@
+.section {
+  padding: 4rem 2rem;
+  background-color: transparent;
+  text-align: center;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.actionBtn:hover {
+  transform: translateY(-10px);
+  background-color: var(--secondary-color);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid var(--glass-border);
+  animation: popIn 0.3s ease-out forwards;
+  color: white;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modalContent h3 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none; border: none;
+  font-size: 2rem; color: #888;
+  cursor: pointer;
+}
+
+.mapLink {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .actionBtn {
+    width: 80px;
+    height: 80px;
+  }
+  .icon {
+    font-size: 1.5rem;
+  }
+  .actionBtn span:last-child {
+    font-size: 0.8rem;
+  }
+}

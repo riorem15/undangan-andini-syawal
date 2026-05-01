@@ -1,0 +1,114 @@
+.section {
+  padding: 5rem 2rem;
+  background-color: transparent;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+  color: #eee;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.bankCard {
+  color: gold;
+  padding: 2rem;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bankCard::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 100px; height: 100px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 50%;
+}
+
+.bankCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.accountNumber {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.accountName {
+  margin-bottom: 1.5rem;
+}
+
+.copyBtn {
+  background: gold;
+  color: #3e2723;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.copyBtn:hover {
+  transform: scale(1.05);
+}
+
+.giftForm {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.giftForm h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.giftForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.giftForm input, .giftForm textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.submitBtn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submitBtn:hover {
+  background: var(--text-dark);
+}
