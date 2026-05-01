@@ -1,44 +1,52 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { createClient } from '@supabase/supabase-js';
 
-const dbPath = path.join(process.cwd(), 'data', 'comments.json');
-
-function initDb() {
-  const dir = path.dirname(dbPath);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  if (!fs.existsSync(dbPath)) {
-    fs.writeFileSync(dbPath, JSON.stringify([]));
-  }
-}
+const supabaseUrl = 'https://ufbuaqthfovubyguyruu.supabase.co';
+const supabaseKey = 'sb_publishable_kyG_xUitQ-7eisMaQBVbXQ_3WLD7OqF';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function GET() {
   try {
-    initDb();
-    const data = fs.readFileSync(dbPath, 'utf8');
-    return NextResponse.json(JSON.parse(data));
+    const { data, error } = await supabase
+      .from('comments')
+      .select('*')
+      .order('date', { ascending: true });
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return NextResponse.json([]); // Return empty array if error or table doesn't exist yet
+    }
+
+    return NextResponse.json(data || []);
   } catch (error) {
-    return NextResponse.json([], { status: 500 });
+    return NextResponse.json([]);
   }
 }
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   try {
-    initDb();
-    const body = await req.json();
+    const body = await request.json();
+    if (!body.name || !body.message) {
+      return NextResponse.json({ error: 'Name and message are required' }, { status: 400 });
+    }
+
     const newComment = {
-      id: Date.now().toString(),
-      name: body.name || 'Anonim',
-      message: body.message || '',
-      date: new Date().toISOString(),
+      name: body.name,
+      message: body.message,
+      date: new Date().toISOString()
     };
-    const data = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-    data.push(newComment);
-    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
-    return NextResponse.json(newComment, { status: 201 });
+
+    const { error } = await supabase
+      .from('comments')
+      .insert([newComment]);
+
+    if (error) {
+      console.error('Supabase insert error:', error);
+      return NextResponse.json({ error: 'Failed to save comment' }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to save comment' }, { status: 500 });
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }
