@@ -3,11 +3,11 @@ import { useEffect, useRef } from 'react';
 import styles from './StoryMapSection.module.css';
 
 const storySteps = [
-  { id: 1, title: 'Awal Bertemu', desc: 'Kami pertama kali bertemu di sebuah acara dan saling mengenal.' },
-  { id: 2, title: 'Menjalani Hubungan', desc: 'Seiring waktu, tumbuh rasa nyaman dan kami memutuskan untuk bersama.' },
-  { id: 3, title: 'Memantapkan Hati', desc: 'Setelah banyak rintangan, kami yakin satu sama lain adalah pelabuhan terakhir.' },
-  { id: 4, title: 'Mengikat Janji', desc: 'Sebuah komitmen diucapkan untuk melangkah ke jenjang yang lebih serius.' },
-  { id: 5, title: 'Mempersunting', desc: 'Akhirnya, hari bahagia ini tiba di mana kami akan hidup bersama selamanya.' },
+  { id: 1, title: 'Awal Bertemu', desc: 'Pertama kali kita kenal melalui sosmed.' },
+  { id: 2, title: 'Tumbuhnya Cinta', desc: 'Seiring waktu yang berjalan disitu rasa cinta tumbuh.' },
+  { id: 3, title: 'Rintangan Terlewati', desc: 'Setelah banyaknya rintangan yang menghadang dalam hubungan tetapi kami yakin semuanya bisa terlewati dan untuk dijadikan tempat berlabuhan terakhir.' },
+  { id: 4, title: 'Mengikat Janji', desc: 'Sebuah komitmen untuk mengikat hubungan ke jenjang yang serius.' },
+  { id: 5, title: 'Hari Bahagia', desc: 'Akhirnya di hari bahagia ini tiba dimana kita akan hidup selamanya.' },
 ];
 
 export default function StoryMapSection() {

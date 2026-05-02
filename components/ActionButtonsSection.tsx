@@ -9,8 +9,8 @@ export default function ActionButtonsSection() {
   type ModalContent = { title: string; content: string; isMap?: boolean };
 
   const modals: Record<ModalKey, ModalContent> = {
-    date: { title: '30 Mei 2026', content: 'Tanggal ini adalah tanggal yang dinanti karena kami akan mengikat janji suci untuk selamanya. Kami sangat berharap kehadiran Anda.' },
-    location: { title: 'Lokasi Resepsi', content: 'Gedung Serbaguna Impian, Jl. Cinta Damai No. 123, Jakarta. Klik tombol di bawah untuk membuka Google Maps.', isMap: true },
+    date: { title: '30 Mei 2026', content: 'Akad Nikah: 07.00 s/d selesai\nResepsi: 10.00 s/d selesai' },
+    location: { title: 'Lokasi Acara', content: 'Klik tombol di bawah untuk membuka Google Maps ke titik lokasi acara.', isMap: true },
     card: { title: 'Terima Kasih', content: 'Terima kasih atas segala doa dan dukungan Anda. Kehadiran Anda adalah hadiah terbesar bagi kami berdua.' }
   };
 
@@ -19,7 +19,7 @@ export default function ActionButtonsSection() {
       <div className={styles.buttonsContainer}>
         <button className={styles.actionBtn} onClick={() => setActiveModal('date')}>
           <span className={styles.icon}>📅</span>
-          <span>Tanggal</span>
+          <span>Tanggal & Waktu</span>
         </button>
         <button className={styles.actionBtn} onClick={() => setActiveModal('location')}>
           <span className={styles.icon}>📍</span>
@@ -27,8 +27,12 @@ export default function ActionButtonsSection() {
         </button>
         <button className={styles.actionBtn} onClick={() => setActiveModal('card')}>
           <span className={styles.icon}>💌</span>
-          <span>Ucapan</span>
+          <span>Surat Ucapan</span>
         </button>
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+        <h2 className="name-font" style={{ fontSize: '3rem', color: '#ffd700' }}>Andini & Awal</h2>
       </div>
 
       {activeModal && (
@@ -38,7 +42,7 @@ export default function ActionButtonsSection() {
             <h3 className="script-font text-gold">{modals[activeModal as ModalKey].title}</h3>
             <p>{modals[activeModal as ModalKey].content}</p>
             {modals[activeModal as ModalKey].isMap && (
-               <a href="https://maps.google.com/?q=-6.200000,106.816666" target="_blank" rel="noopener noreferrer" className={styles.mapLink}>Buka di Google Maps</a>
+               <a href="https://goo.gl/maps/Rg1J7wPLk8C7jo7w9?g_st=aw" target="_blank" rel="noopener noreferrer" className={styles.mapLink}>Buka di Google Maps</a>
             )}
           </div>
         </div>

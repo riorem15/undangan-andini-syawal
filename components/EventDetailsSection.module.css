@@ -1,0 +1,123 @@
+.eventSection {
+  padding: 5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.saveTheDate {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.saveTheDate h2, .eventDetails h2 {
+  font-size: 3.5rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.countdown {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(92, 58, 33, 0.6);
+  backdrop-filter: blur(5px);
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.timeBox span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.timeBox small {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+.eventDetails {
+  width: 100%;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.eventCard {
+  flex: 1;
+  max-width: 400px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.eventCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #d4af37;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.eventInfo {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.date {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .countdown {
+    gap: 0.8rem;
+  }
+  .timeBox {
+    width: 70px;
+    height: 70px;
+  }
+  .timeBox span {
+    font-size: 1.5rem;
+  }
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}

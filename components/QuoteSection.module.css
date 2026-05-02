@@ -1,0 +1,54 @@
+.quoteSection {
+  padding: 6rem 2rem;
+  background-color: transparent; /* Rely on premium-section from globals */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.bismillah {
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+}
+
+.arabic {
+  font-size: 1.8rem;
+  line-height: 2.5;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+}
+
+.translation {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.surah {
+  font-size: 1.1rem;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .quoteSection {
+    padding: 4rem 1rem;
+  }
+  .arabic {
+    font-size: 1.4rem;
+    line-height: 2;
+  }
+  .translation {
+    font-size: 0.9rem;
+  }
+}
