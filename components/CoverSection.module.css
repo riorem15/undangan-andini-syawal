@@ -22,9 +22,8 @@
   background-image: url('/images/inti/layer luar.jpeg');
   background-size: 200% 100%; /* so each door shows half the image */
   background-repeat: no-repeat;
-  transition: transform 2.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
 }
 
 .doorLeft { 
@@ -36,14 +35,7 @@
   transform-origin: right; 
 }
 
-.doorHandleRight {
-  position: absolute; right: 20px; top: 50%; width: 20px; height: 60px;
-  background: linear-gradient(to bottom, #d4af37, #8b6914); border-radius: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
-.doorHandleLeft {
-  position: absolute; left: 20px; top: 50%; width: 20px; height: 60px;
-  background: linear-gradient(to bottom, #d4af37, #8b6914); border-radius: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
+/* door handles removed as per tirai wayang design */
 
 .opened .doorLeft { transform: translateX(-100%); }
 .opened .doorRight { transform: translateX(100%); }
@@ -106,6 +98,8 @@
 .content h2 { 
   font-size: 5rem; 
   margin-bottom: 2rem; 
+  color: #d4af37;
+  text-shadow: 2px 4px 6px rgba(0,0,0,0.8);
   opacity: 0;
 }
 
@@ -123,9 +117,9 @@
 }
 
 .photoLeftWrapper, .photoRightWrapper {
-  width: 150px; height: 150px; border-radius: 50%; overflow: hidden;
-  border: 4px solid gold;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  width: 150px; height: 180px; border-radius: 8px; overflow: hidden;
+  border: 4px solid #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
   opacity: 0;
 }
 
@@ -172,13 +166,23 @@
   background: linear-gradient(45deg, #d4af37, #8b6914); color: white;
   border: none; border-radius: 30px; cursor: pointer; z-index: 100;
   box-shadow: 0 4px 15px rgba(0,0,0,0.8); font-family: 'Playfair Display', serif;
+  animation: heartbeat 2s infinite;
 }
-.openBtn:hover { transform: translateX(-50%) scale(1.05); }
+.openBtn:hover { transform: translateX(-50%) scale(1.05); animation: none; }
+
+@keyframes heartbeat {
+  0% { transform: translateX(-50%) scale(1); }
+  10% { transform: translateX(-50%) scale(1.05); }
+  20% { transform: translateX(-50%) scale(1); }
+  30% { transform: translateX(-50%) scale(1.05); }
+  40% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1); }
+}
 
 @media screen and (max-width: 768px) {
   .content h1 { font-size: 1.8rem; text-align: center; }
   .content h2 { font-size: 3.5rem; text-align: center; line-height: 1.2; }
   .photoContainer { gap: 1rem; }
-  .photoLeftWrapper, .photoRightWrapper { width: 100px; height: 100px; }
+  .photoLeftWrapper, .photoRightWrapper { width: 120px; height: 140px; }
   .dateInfo { font-size: 1rem; }
 }

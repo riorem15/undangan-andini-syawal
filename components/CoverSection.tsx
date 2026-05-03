@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import styles from './CoverSection.module.css';
+import HeartParticles from './HeartParticles';
 
 export default function CoverSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,8 @@ export default function CoverSection() {
         
         {/* Bottom Ornament */}
         <div className={styles.bottomOrnament}></div>
+
+        <HeartParticles />
 
         {/* Main Content */}
         <div className={styles.content}>
@@ -47,10 +50,8 @@ export default function CoverSection() {
       {/* Wayang Door elements layer */}
       <div className={styles.doorContainer}>
         <div className={`${styles.door} ${styles.doorLeft}`}>
-          <div className={styles.doorHandleRight}></div>
         </div>
         <div className={`${styles.door} ${styles.doorRight}`}>
-          <div className={styles.doorHandleLeft}></div>
         </div>
       </div>
 
