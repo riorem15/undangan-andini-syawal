@@ -1,14 +1,21 @@
-'use client';
 import { useState } from 'react';
 import styles from './WeddingGiftSection.module.css';
+import DigitalCertificate from './DigitalCertificate';
 
 export default function WeddingGiftSection() {
   const [copied, setCopied] = useState<string | null>(null);
+  const [showCertificate, setShowCertificate] = useState(false);
+  const [guestName, setGuestName] = useState('');
 
   const handleCopy = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
     setCopied(type);
     setTimeout(() => setCopied(null), 2000);
+  };
+
+  const handleConfirm = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowCertificate(true);
   };
 
   return (
@@ -38,13 +45,27 @@ export default function WeddingGiftSection() {
 
       <div className={`glass-panel ${styles.giftForm}`}>
         <h3>Konfirmasi Pengiriman Hadiah</h3>
-        <form onSubmit={(e) => { e.preventDefault(); alert('Terima kasih atas hadiah Anda!'); }}>
-          <input type="text" placeholder="Nama Anda" required />
+        <form onSubmit={handleConfirm}>
+          <input 
+            type="text" 
+            placeholder="Nama Anda" 
+            required 
+            value={guestName}
+            onChange={(e) => setGuestName(e.target.value)}
+          />
           <input type="number" placeholder="Nominal (Rp)" required />
           <textarea placeholder="Pesan untuk kami" rows={3} required></textarea>
-          <button type="submit" className={styles.submitBtn}>Kirim Konfirmasi</button>
+          <button type="submit" className={styles.submitBtn}>Kirim Konfirmasi & Ambil Sertifikat</button>
         </form>
       </div>
+
+      {showCertificate && (
+        <DigitalCertificate 
+          guestName={guestName} 
+          onClose={() => setShowCertificate(false)} 
+        />
+      )}
     </section>
   );
 }
+

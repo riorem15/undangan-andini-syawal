@@ -6,6 +6,7 @@ import StoryMapSection from '../components/StoryMapSection';
 import GallerySection from '../components/GallerySection';
 import ActionButtonsSection from '../components/ActionButtonsSection';
 import WeddingGiftSection from '../components/WeddingGiftSection';
+import RSVPSection from '../components/RSVPSection';
 import CommentSection from '../components/CommentSection';
 import FooterSection from '../components/FooterSection';
 
@@ -22,8 +23,10 @@ export default function Home() {
       <GallerySection />
       <RevealWrapper><ActionButtonsSection /></RevealWrapper>
       <RevealWrapper><WeddingGiftSection /></RevealWrapper>
+      <RevealWrapper><RSVPSection /></RevealWrapper>
       <RevealWrapper><CommentSection /></RevealWrapper>
       <FooterSection />
     </main>
   );
 }
+
