@@ -34,15 +34,27 @@ export default function CommentSection() {
     if (!name || !message) return;
     
     setLoading(true);
+
+    // Optimistic Update so user immediately sees their comment
+    const optimisticComment = {
+      id: Date.now().toString(),
+      name,
+      message,
+      date: new Date().toISOString()
+    };
+    
+    setComments(prev => [...prev, optimisticComment]);
+    setName('');
+    setMessage('');
+    
     try {
       const res = await fetch('/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, message }),
+        body: JSON.stringify({ name: optimisticComment.name, message: optimisticComment.message }),
       });
       if (res.ok) {
-        setName('');
-        setMessage('');
+        // Silently refresh in background
         fetchComments();
       }
     } catch (err) {

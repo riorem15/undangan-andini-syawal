@@ -47,6 +47,13 @@
   letter-spacing: 2px;
 }
 
+.giftCard p {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
 .accountNumber {
   font-size: 1.8rem;
   font-weight: bold;

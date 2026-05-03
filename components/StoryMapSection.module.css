@@ -50,7 +50,7 @@
   width: 30px;
   height: 30px;
   right: -15px;
-  background-color: white;
+  background-color: var(--primary-color);
   border: 4px solid var(--accent-color);
   top: 15px;
   border-radius: 50%;
@@ -79,12 +79,17 @@
   position: relative;
   border-radius: 15px;
   border-top: 5px solid var(--secondary-color);
-  color: white;
+  color: var(--text-dark);
 }
 
 .content h3 {
   color: var(--secondary-color);
   margin-bottom: 10px;
+}
+
+.content p {
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 @media screen and (max-width: 600px) {

@@ -19,7 +19,7 @@ export default function HeartParticles() {
     const newParticles = Array.from({ length: 30 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}vw`,
-      size: `${Math.random() * 10 + 8}px`, // sizes between 8px and 18px
+      size: `${Math.random() * 15 + 10}px`, // sizes between 10px and 25px
       duration: `${Math.random() * 10 + 8}s`, // fall duration between 8s and 18s
       delay: `${Math.random() * 10}s`, // staggered start
       opacity: Math.random() * 0.5 + 0.3, // opacity between 0.3 and 0.8
@@ -39,9 +39,10 @@ export default function HeartParticles() {
             animationDuration: p.duration,
             animationDelay: p.delay,
             '--base-opacity': p.opacity,
+            width: p.size,
+            height: p.size,
           } as React.CSSProperties}
         >
-          ❤
         </div>
       ))}
     </div>
