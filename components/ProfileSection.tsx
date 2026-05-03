@@ -34,7 +34,7 @@ export default function ProfileSection() {
               <img src="/images/main foto andini.jpeg" alt="Andini" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/andini/400/500'; }} />
             </div>
             <h2 className="serif-font uppercase">ANDINI</h2>
-            <p className={styles.parentsInfo}>Putri Bapak R. Santoso<br/>& Ibu R. Siti Aminah</p>
+            <p className={styles.parentsInfo}>Putri Bapak Nana Mulyana<br/>& Ibu Santewi</p>
           </div>
 
           <div className={styles.separator}>
@@ -46,8 +46,8 @@ export default function ProfileSection() {
             <div className={styles.imageWrapper}>
               <img src="/images/main foto syawal.jpeg" alt="Syawal" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/sawal/400/500'; }} />
             </div>
-            <h2 className="serif-font uppercase">SYAWAL</h2>
-            <p className={styles.parentsInfo}>Putra Bapak H. Bambang Irawan<br/>& Ibu Hj. Siti Rohmah</p>
+            <h2 className="serif-font uppercase">SYAWALUDIN</h2>
+            <p className={styles.parentsInfo}>Putra Bapak Sukardi<br/>& Ibu Siti Harum</p>
           </div>
         </div>
 

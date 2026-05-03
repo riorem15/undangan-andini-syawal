@@ -186,6 +186,14 @@
 }
 .locationLink:hover { color: #8B6508; }
 
+.locationStatic {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: #cba365;
+  cursor: default;
+  user-select: none;
+}
+
 .eventInfo p { margin: 0; }
 
 @media screen and (max-width: 768px) {

@@ -4,66 +4,51 @@ import styles from './EnvelopeSection.module.css';
 import HeartParticles from './HeartParticles';
 
 export default function EnvelopeSection() {
-  const [state, setState] = useState<'envelope' | 'opening' | 'opened'>('envelope');
-  const [showContent, setShowContent] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const handleOpen = () => {
-    setState('opening');
-    setTimeout(() => {
-      setState('opened');
-      setTimeout(() => setShowContent(true), 600);
-    }, 1800);
+  useEffect(() => {
+    // Trigger text animation on mount
+    const t = setTimeout(() => setVisible(true), 300);
+    return () => clearTimeout(t);
+  }, []);
+
+  const scrollDown = () => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
   };
 
   return (
-    <div className={`${styles.wrapper} ${state === 'opened' ? styles.wrapperOpened : ''}`}>
+    <section className={styles.cover}>
+      {/* Photo Background */}
+      <div className={styles.photoBg}></div>
+      {/* Dark overlay */}
+      <div className={styles.overlay}></div>
 
-      {/* ===== AMPLOP ===== */}
-      {state !== 'opened' && (
-        <div className={`${styles.envelopeScene} ${state === 'opening' ? styles.sceneOpening : ''}`}>
-          <HeartParticles />
-          <p className={styles.fromText}>Sebuah undangan istimewa untuk Anda</p>
-          <div className={styles.envelopeWrap} onClick={state === 'envelope' ? handleOpen : undefined}>
-            {/* Flap */}
-            <div className={`${styles.flap} ${state === 'opening' ? styles.flapOpen : ''}`}>
-              <div className={styles.flapInner}></div>
-            </div>
-            {/* Body */}
-            <div className={styles.body}>
-              <div className={styles.seal}>
-                <span className={styles.sealText}>A&S</span>
-              </div>
-              <div className={styles.bodyLines}>
-                <span></span><span></span><span></span>
-              </div>
-            </div>
-            {/* Letter sliding out */}
-            <div className={`${styles.letter} ${state === 'opening' ? styles.letterSlide : ''}`}>
-              <p className={styles.letterPreview}>Undangan Pernikahan</p>
-              <p className={styles.letterNames}>Andini & Syawal</p>
-            </div>
-          </div>
-          {state === 'envelope' && (
-            <button className={styles.openBtn} onClick={handleOpen}>
-              ✉ Buka Undangan
-            </button>
-          )}
-          {state === 'opening' && (
-            <p className={styles.openingText}>Membuka undangan...</p>
-          )}
-        </div>
-      )}
+      {/* Wayang silhouettes */}
+      <div className={`${styles.wayang} ${styles.wayangLeft}`}></div>
+      <div className={`${styles.wayang} ${styles.wayangRight}`}></div>
 
-      {/* ===== KONTEN UTAMA (setelah amplop dibuka) ===== */}
-      {state === 'opened' && (
-        <div className={`${styles.mainContent} ${showContent ? styles.contentVisible : ''}`}>
-          <HeartParticles />
-          {/* 2D Illustration - crop header away */}
-          <div className={styles.illustrationWrap}>
-            <div className={styles.illustration}></div>
-          </div>
+      {/* Floating petals */}
+      <HeartParticles />
+
+      {/* Animated Content */}
+      <div className={`${styles.content} ${visible ? styles.contentVisible : ''}`}>
+        <p className={styles.bismillah}>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+        <p className={styles.theWedding}>The Wedding of</p>
+        <h1 className={`name-font ${styles.names}`}>Andini & Syawal</h1>
+        <div className={styles.dateLine}>
+          <span className={styles.dateText}>30 Mei 2026 Masehi</span>
+          <span className={styles.dateSeparator}>✦</span>
+          <span className={styles.dateText}>13 Dzulhijjah 1447 H</span>
         </div>
-      )}
-    </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <button className={styles.scrollBtn} onClick={scrollDown} aria-label="Scroll ke bawah">
+        <span className={styles.scrollText}>Gulir ke bawah</span>
+        <div className={styles.scrollArrow}>
+          <div className={styles.arrow}></div>
+        </div>
+      </button>
+    </section>
   );
 }

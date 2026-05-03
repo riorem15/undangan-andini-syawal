@@ -51,14 +51,7 @@ export default function EventDetailsSection() {
                 <p className={styles.eventDay}>Sabtu, 30 Mei 2026</p>
                 <p className={styles.eventHijri}>13 Dzulhijjah 1447 H</p>
                 <p className={styles.eventTime}>⏰ Pukul 07.00 – Selesai</p>
-                <a
-                  href="https://maps.google.com/?q=Kediaman+Mempelai+Wanita"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.locationLink}
-                >
-                  📍 Kediaman Mempelai Wanita
-                </a>
+                <p className={styles.locationStatic}>📍 Kediaman Mempelai Wanita</p>
               </div>
             </div>
 
@@ -69,14 +62,7 @@ export default function EventDetailsSection() {
                 <p className={styles.eventDay}>Sabtu, 30 Mei 2026</p>
                 <p className={styles.eventHijri}>13 Dzulhijjah 1447 H</p>
                 <p className={styles.eventTime}>⏰ Pukul 10.00 – Selesai</p>
-                <a
-                  href="https://maps.google.com/?q=Kediaman+Mempelai+Wanita"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.locationLink}
-                >
-                  📍 Kediaman Mempelai Wanita
-                </a>
+                <p className={styles.locationStatic}>📍 Kediaman Mempelai Wanita</p>
               </div>
             </div>
           </div>
