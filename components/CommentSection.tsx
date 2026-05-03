@@ -111,6 +111,12 @@ export default function CommentSection() {
           </div>
         </div>
       </div>
+
+      <div className={styles.closing}>
+        <div className={styles.closingLine}></div>
+        <p className={styles.closingText}>Tertanda,</p>
+        <p className={`name-font ${styles.closingNames}`}>Andini & Syawal</p>
+      </div>
     </section>
   );
 }

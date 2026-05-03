@@ -1,113 +1,221 @@
 .section {
-  padding: 5rem 2rem;
-  background-color: transparent;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 3.5rem;
-  color: #ffd700;
-  margin-bottom: 3rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.timeline {
+  padding: 8rem 2rem 10rem;
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
-.timeline::after {
+.title {
+  text-align: center;
+  font-size: 4rem;
+  color: #8B6508;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #8B6508;
+  opacity: 0.6;
+  margin-bottom: 5rem;
+  letter-spacing: 1px;
+}
+
+/* ===== PATH ===== */
+.pathContainer {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 280px;
+}
+
+.path {
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #cba365 10%, #cba365 90%, transparent);
+  transform: translateY(-50%);
+}
+.path::after {
   content: '';
   position: absolute;
-  width: 6px;
-  background-color: var(--secondary-color);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-  border-radius: 3px;
+  top: -1px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.5) 70%, transparent);
 }
 
-.storyBlock {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-in-out;
-}
-
-.storyBlock.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.storyBlock::after {
-  content: '♥';
+/* ===== NODES ===== */
+.node {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  right: -15px;
-  background-color: var(--primary-color);
-  border: 4px solid var(--accent-color);
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-  color: var(--accent-color);
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 5;
 }
 
-.left {
-  left: 0;
-}
-
-.right {
-  left: 50%;
-}
-
-.right::after {
-  left: -15px;
-}
-
-.content {
-  padding: 20px 30px;
+.nodeBtn {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3c078, #cba365);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(203,163,101,0.5);
+  border: 3px solid #fff;
+  transition: all 0.3s ease;
   position: relative;
-  border-radius: 15px;
-  border-top: 5px solid var(--secondary-color);
-  color: var(--text-dark);
+  z-index: 2;
+}
+.nodeBtn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 25px rgba(203,163,101,0.7);
+}
+.nodeIcon {
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
-.content h3 {
-  color: var(--secondary-color);
-  margin-bottom: 10px;
+.nodeLabel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
+}
+.nodeTop { flex-direction: column-reverse; }
+.labelTop { top: -70px; }
+.labelBottom { bottom: -70px; top: auto; }
+
+.nodeYear {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  color: #cba365;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.nodeTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: #3e2723;
+  font-weight: 600;
 }
 
-.content p {
-  color: var(--text-dark);
-  line-height: 1.6;
+/* ===== MODAL ===== */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(62, 39, 35, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@media screen and (max-width: 600px) {
-  .timeline::after {
-    left: 31px;
+.modal {
+  background: #fffef8;
+  border-radius: 24px;
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(62, 39, 35, 0.3);
+  border: 1px solid rgba(203,163,101,0.3);
+  position: relative;
+  animation: popUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes popUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #3e2723;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.modalClose:hover { background: #fff; transform: scale(1.1); }
+
+.modalImage {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+.modalImage img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(62, 39, 35, 0.7));
+}
+.imageIcon {
+  position: absolute;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.modalBody {
+  padding: 1.5rem 2rem 2rem;
+}
+.modalYear {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.8rem;
+  color: #cba365;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.modalTitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: #3e2723;
+  margin: 0.3rem 0 1rem;
+}
+.modalDesc {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5d4037;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .pathContainer {
+    display: none; /* On mobile, show as vertical list instead */
   }
-  
-  .storyBlock {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
+
+  .section::after {
+    content: '';
   }
-  
-  .storyBlock::after {
-    left: 15px;
-  }
-  
-  .right {
-    left: 0%;
+
+  /* Show a simple card list on mobile */
+  .section {
+    padding: 6rem 1.5rem 8rem;
   }
 }

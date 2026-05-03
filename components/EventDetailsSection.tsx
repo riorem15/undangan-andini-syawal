@@ -25,16 +25,20 @@ export default function EventDetailsSection() {
     <section className={styles.eventSection}>
       <div className={styles.container}>
         <div className={styles.saveTheDate}>
-          <h2 className="name-font">Event & Information</h2>
-          <p className={styles.subtitle}>For the Wedding of Andini & Syawal</p>
+          <h2 className="name-font">Save the Date</h2>
+          <p className={styles.subtitle}>Pernikahan Andini & Syawal</p>
+          <div className={styles.dateInfo}>
+            <p className={styles.hijriDate}>13 Dzulhijjah 1447 Hijriah</p>
+            <p className={styles.miladDate}>Sabtu, 30 Mei 2026</p>
+          </div>
           <div className={styles.countdown}>
-            <div className={styles.timeBox}><span>{timeLeft.days}</span><small>DAYS</small></div>
+            <div className={styles.timeBox}><span>{timeLeft.days}</span><small>HARI</small></div>
             <span className={styles.timeSeparator}>:</span>
-            <div className={styles.timeBox}><span>{timeLeft.hours}</span><small>HOURS</small></div>
+            <div className={styles.timeBox}><span>{timeLeft.hours}</span><small>JAM</small></div>
             <span className={styles.timeSeparator}>:</span>
-            <div className={styles.timeBox}><span>{timeLeft.minutes}</span><small>MINUTES</small></div>
+            <div className={styles.timeBox}><span>{timeLeft.minutes}</span><small>MENIT</small></div>
             <span className={styles.timeSeparator}>:</span>
-            <div className={styles.timeBox}><span>{timeLeft.seconds}</span><small>SECONDS</small></div>
+            <div className={styles.timeBox}><span>{timeLeft.seconds}</span><small>DETIK</small></div>
           </div>
         </div>
 
@@ -44,14 +48,17 @@ export default function EventDetailsSection() {
               <div className={styles.batikCorner}></div>
               <h3 className="name-font">Akad Nikah</h3>
               <div className={styles.eventInfo}>
-                <p><strong>Saturday, October 26th, 2026</strong></p>
-                <p>08:00 AM - 10:00 AM</p>
-                <br/>
-                <p>Pendopo Agung Hotel</p>
-                <p>Ambarrukmo, Yogyakarta</p>
-                <br/>
-                <p>Dress Code:</p>
-                <p>Traditional Javanese attire</p>
+                <p className={styles.eventDay}>Sabtu, 30 Mei 2026</p>
+                <p className={styles.eventHijri}>13 Dzulhijjah 1447 H</p>
+                <p className={styles.eventTime}>⏰ Pukul 07.00 – Selesai</p>
+                <a
+                  href="https://maps.google.com/?q=Kediaman+Mempelai+Wanita"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.locationLink}
+                >
+                  📍 Kediaman Mempelai Wanita
+                </a>
               </div>
             </div>
 
@@ -59,14 +66,17 @@ export default function EventDetailsSection() {
               <div className={styles.batikCorner}></div>
               <h3 className="name-font">Resepsi</h3>
               <div className={styles.eventInfo}>
-                <p><strong>Saturday, October 26th, 2026</strong></p>
-                <p>11:00 AM - 02:00 PM</p>
-                <br/>
-                <p>The Grand Ballroom,</p>
-                <p>Hotel Ambarrukmo, Yogyakarta</p>
-                <br/>
-                <p>Dress Code:</p>
-                <p>Formal Javanese or Evening Wear</p>
+                <p className={styles.eventDay}>Sabtu, 30 Mei 2026</p>
+                <p className={styles.eventHijri}>13 Dzulhijjah 1447 H</p>
+                <p className={styles.eventTime}>⏰ Pukul 10.00 – Selesai</p>
+                <a
+                  href="https://maps.google.com/?q=Kediaman+Mempelai+Wanita"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.locationLink}
+                >
+                  📍 Kediaman Mempelai Wanita
+                </a>
               </div>
             </div>
           </div>

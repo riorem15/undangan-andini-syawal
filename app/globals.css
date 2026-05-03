@@ -5,14 +5,15 @@
   --secondary-color: #e6cd98;
   --bg-color: #fbf8f1;
   --bg-dark: #f0e9dd;
-  --text-dark: #3e2723;
+  --text-dark: #8B6508;
+  --text-body: #5d3a1a;
   --text-light: #ffffff;
   --accent-color: #cba365;
   
   --gold-gradient: linear-gradient(135deg, #e3c078 0%, #cba365 50%, #9e7631 100%);
-  --glass-bg: rgba(253, 251, 247, 0.6);
-  --glass-border: rgba(203, 163, 101, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(203, 163, 101, 0.1);
+  --glass-bg: rgba(255, 252, 240, 0.75);
+  --glass-border: rgba(203, 163, 101, 0.35);
+  --glass-shadow: 0 8px 32px 0 rgba(203, 163, 101, 0.15);
 }
 
 * {
@@ -65,7 +66,7 @@ a {
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   border-radius: 20px;
-  color: white;
+  color: var(--text-body);
 }
 
 /* Global Scroll Reveal */

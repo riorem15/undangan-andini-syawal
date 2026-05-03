@@ -23,15 +23,31 @@
 }
 
 .saveTheDate h2 {
-  font-size: 4.5rem;
-  color: var(--text-dark);
+  font-size: 5rem;
+  color: #8B6508;
 }
 
 .subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: var(--text-dark);
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #8B6508;
+  margin-bottom: 0.5rem;
+}
+
+.dateInfo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.hijriDate {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #cba365;
+  letter-spacing: 1px;
+}
+.miladDate {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #8B6508;
 }
 
 .countdown {
@@ -138,9 +154,39 @@
   color: var(--text-dark);
 }
 
-.eventInfo p {
-  margin: 0;
+.eventDay {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #5d3a1a;
+  margin-bottom: 2px;
 }
+.eventHijri {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  color: #cba365;
+  margin-bottom: 8px;
+}
+.eventTime {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #5d3a1a;
+  margin-bottom: 8px;
+}
+.locationLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: #cba365;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.locationLink:hover { color: #8B6508; }
+
+.eventInfo p { margin: 0; }
 
 @media screen and (max-width: 768px) {
   .countdown {

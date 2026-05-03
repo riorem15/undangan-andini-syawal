@@ -1,0 +1,89 @@
+.footer {
+  background: linear-gradient(160deg, #3e2723 0%, #5d3a1a 60%, #3e2723 100%);
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.ornament {
+  font-size: 3rem;
+  color: #cba365;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.signature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.tertanda {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: rgba(203,163,101,0.7);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #e3c078;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.divider {
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #cba365, transparent);
+  margin: 0.5rem 0;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.made {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+.agency {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e3c078;
+  letter-spacing: 2px;
+}
+
+.contacts {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.contact {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact:hover { color: #e3c078; }
+
+.copy {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  font-family: 'Inter', sans-serif;
+}
