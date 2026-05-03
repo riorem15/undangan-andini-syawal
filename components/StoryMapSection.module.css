@@ -207,18 +207,85 @@
   color: #d4b483;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE — Vertical Cards ===== */
 @media (max-width: 768px) {
   .pathContainer {
-    display: none; /* On mobile, show as vertical list instead */
+    display: none;
   }
-
-  .section::after {
-    content: '';
-  }
-
-  /* Show a simple card list on mobile */
   .section {
-    padding: 6rem 1.5rem 8rem;
+    padding: 5rem 1.2rem 6rem;
+  }
+  .subtitle {
+    margin-bottom: 2.5rem;
   }
 }
+
+/* Mobile card grid — visible only on mobile */
+.mobileCards {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobileCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+.mobileCard {
+  background: rgba(30, 16, 8, 0.9);
+  border: 1px solid rgba(203,163,101,0.25);
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.mobileCard:hover, .mobileCard:active {
+  border-color: rgba(203,163,101,0.5);
+  transform: translateX(4px);
+}
+.mobileCardIcon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e3c078, #cba365);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #120a04;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(203,163,101,0.4);
+}
+.mobileCardBody {
+  flex: 1;
+}
+.mobileCardYear {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7rem;
+  color: #cba365;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.mobileCardTitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  color: #e3c078;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.mobileCardDesc {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: #d4b483;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+

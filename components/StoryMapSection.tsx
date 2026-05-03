@@ -41,6 +41,20 @@ export default function StoryMapSection() {
         ))}
       </div>
 
+      {/* Mobile card list - visible only on mobile via CSS */}
+      <div className={styles.mobileCards}>
+        {stories.map((story) => (
+          <div key={story.id} className={styles.mobileCard} onClick={() => setActiveStory(story)}>
+            <div className={styles.mobileCardIcon}>{story.icon}</div>
+            <div className={styles.mobileCardBody}>
+              <p className={styles.mobileCardYear}>{story.year}</p>
+              <p className={styles.mobileCardTitle}>{story.title}</p>
+              <p className={styles.mobileCardDesc}>{story.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Modal */}
       {activeStory && (
         <div className={styles.modalOverlay} onClick={() => setActiveStory(null)}>
