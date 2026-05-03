@@ -5,7 +5,7 @@ import styles from './StoryMapSection.module.css';
 const stories = [
   {
     id: 1,
-    icon: '💫',
+    icon: '✦',
     title: 'Awal Bertemu',
     year: '2020',
     desc: 'Pertama kali kita kenal melalui media sosial. Sebuah perkenalan sederhana yang menjadi awal dari segalanya.',
@@ -13,7 +13,7 @@ const stories = [
   },
   {
     id: 2,
-    icon: '🌱',
+    icon: '❧',
     title: 'Tumbuhnya Cinta',
     year: '2021',
     desc: 'Seiring waktu yang berjalan, rasa cinta tumbuh perlahan namun pasti. Setiap hari terasa lebih indah bersamamu.',
@@ -21,7 +21,7 @@ const stories = [
   },
   {
     id: 3,
-    icon: '💪',
+    icon: '✿',
     title: 'Rintangan Terlewati',
     year: '2022',
     desc: 'Banyak rintangan yang menghadang, namun kami yakin semuanya dapat terlewati. Cinta kami semakin kuat.',
@@ -29,7 +29,7 @@ const stories = [
   },
   {
     id: 4,
-    icon: '💍',
+    icon: '✦',
     title: 'Mengikat Janji',
     year: '2025',
     desc: 'Sebuah komitmen untuk mengikat hubungan ke jenjang yang serius — melamar dan menyatakan janji setia.',
@@ -37,7 +37,7 @@ const stories = [
   },
   {
     id: 5,
-    icon: '🕌',
+    icon: '❦',
     title: 'Hari Bahagia',
     year: '2026',
     desc: 'Akhirnya, hari bahagia itu tiba. Kami akan memulai babak baru kehidupan bersama untuk selamanya.',
@@ -83,6 +83,7 @@ export default function StoryMapSection() {
             <button className={styles.modalClose} onClick={() => setActiveStory(null)}>✕</button>
             <div className={styles.modalImage}>
               <img src={activeStory.image} alt={activeStory.title}
+                style={{ objectPosition: 'center top' }}
                 onError={e => { (e.currentTarget as HTMLImageElement).src = `https://picsum.photos/seed/${activeStory.id}/400/300`; }} />
               <div className={styles.imageOverlay}></div>
               <div className={styles.imageIcon}>{activeStory.icon}</div>

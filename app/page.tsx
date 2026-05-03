@@ -4,6 +4,7 @@ import ProfileSection from '../components/ProfileSection';
 import EventDetailsSection from '../components/EventDetailsSection';
 import StoryMapSection from '../components/StoryMapSection';
 import GallerySection from '../components/GallerySection';
+import PuzzleGame from '../components/PuzzleGame';
 import ActionButtonsSection from '../components/ActionButtonsSection';
 import WeddingGiftSection from '../components/WeddingGiftSection';
 import CommentSection from '../components/CommentSection';
@@ -20,6 +21,7 @@ export default function Home() {
       <RevealWrapper><EventDetailsSection /></RevealWrapper>
       <RevealWrapper><StoryMapSection /></RevealWrapper>
       <GallerySection />
+      <RevealWrapper><PuzzleGame /></RevealWrapper>
       <RevealWrapper><ActionButtonsSection /></RevealWrapper>
       <RevealWrapper><WeddingGiftSection /></RevealWrapper>
       <RevealWrapper><CommentSection /></RevealWrapper>

@@ -4,7 +4,7 @@
   top: 0; left: 0;
   width: 100vw; height: 100vh;
   z-index: 999;
-  background-color: #fbf8f1;
+  background: linear-gradient(160deg, #120a04 0%, #1f1009 60%, #120a04 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
   height: auto;
   min-height: 100vh;
   z-index: 1;
-  background: transparent;
+  background: linear-gradient(160deg, #120a04 0%, #1f1009 60%, #120a04 100%);
 }
 
 /* ===== ENVELOPE SCENE ===== */
@@ -46,7 +46,7 @@
 .fromText {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
-  color: #8B6508;
+  color: #e3c078;
   letter-spacing: 1px;
   opacity: 0.8;
   text-align: center;
@@ -240,12 +240,12 @@
 /* Crop off the top navigation bar from the 2D design */
 .illustration {
   position: absolute;
-  top: -70px; left: 0;    /* negative top crops the navbar */
+  top: 0; left: 0;
   width: 100%;
-  height: calc(100% + 70px);
-  background-image: url('/images/2d_intro.png');
+  height: 100%;
+  background-image: url('/images/wedding_hero.png');
   background-size: cover;
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
   animation: slowZoom 20s ease-out forwards;
 }

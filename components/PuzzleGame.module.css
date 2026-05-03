@@ -1,0 +1,173 @@
+.section {
+  padding: 8rem 2rem;
+  background: linear-gradient(180deg, #1a0e06 0%, #120a04 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #e3c078;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: rgba(203,163,101,0.7);
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Game Layout */
+.gameWrapper {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Preview */
+.previewWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.preview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  border: 2px solid rgba(203,163,101,0.4);
+  filter: brightness(0.8);
+}
+.previewLabel {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.8rem;
+  color: rgba(203,163,101,0.6);
+  letter-spacing: 1px;
+}
+
+/* Board */
+.boardWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  border: 2px solid rgba(203,163,101,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(203,163,101,0.1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.tile {
+  cursor: pointer;
+  background-color: #1a0e06;
+  background-repeat: no-repeat;
+  transition: all 0.15s ease;
+  position: relative;
+}
+.tile:hover:not(.empty) {
+  filter: brightness(1.15);
+  z-index: 2;
+}
+.tile:active:not(.empty) {
+  transform: scale(0.97);
+}
+
+.empty {
+  background: rgba(203,163,101,0.08) !important;
+  cursor: default;
+  border: 2px dashed rgba(203,163,101,0.2);
+}
+
+/* Info Bar */
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.moves {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #d4b483;
+}
+.moves strong {
+  color: #e3c078;
+  font-size: 1.3rem;
+}
+
+.startBtn {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #e3c078, #cba365);
+  color: #120a04;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(203,163,101,0.3);
+  transition: all 0.2s ease;
+}
+.startBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(203,163,101,0.5);
+}
+
+/* Win Banner */
+.winBanner {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.winCard {
+  background: #1a0e06;
+  border: 1px solid rgba(203,163,101,0.4);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+  animation: popUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.winEmoji { font-size: 4rem; margin-bottom: 0.5rem; }
+.winTitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #e3c078;
+  margin-bottom: 0.5rem;
+}
+.winDesc {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #d4b483;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.winDesc strong { color: #e3c078; }
