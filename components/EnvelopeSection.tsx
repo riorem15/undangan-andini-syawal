@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import styles from './EnvelopeSection.module.css';
-import HeartParticles from './HeartParticles';
 
 type Phase = 'envelope' | 'opening' | 'cover';
 
@@ -27,9 +26,7 @@ export default function EnvelopeSection() {
       {/* ======== PHASE 1 & 2: ENVELOPE ======== */}
       {phase !== 'cover' && (
         <div className={`${styles.envelopeWrapper} ${phase === 'opening' ? styles.wrapperFading : ''}`}>
-          <HeartParticles />
-
-          <div className={styles.envelopeScene}>
+        <div className={styles.envelopeScene}>
             <p className={styles.fromText}>Sebuah undangan istimewa untuk Anda ✦</p>
 
             {/* Envelope */}
@@ -97,9 +94,6 @@ export default function EnvelopeSection() {
           {/* Wayang silhouettes */}
           <div className={`${styles.wayang} ${styles.wayangLeft}`}></div>
           <div className={`${styles.wayang} ${styles.wayangRight}`}></div>
-
-          {/* Floating petals */}
-          <HeartParticles />
 
           {/* Animated Content */}
           <div className={`${styles.content} ${coverVisible ? styles.contentVisible : ''}`}>
