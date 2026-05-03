@@ -24,10 +24,7 @@ export default function ProfileSection() {
     <section ref={sectionRef} className={styles.profileSection}>
       <div className={styles.container}>
         <div className={styles.greeting}>
-          <h3>Assalamualaikum wr. wb.</h3>
-          <p>
-            Tanpa mengurangi rasa hormat, kami mengundang bapak/ibu/saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami:
-          </p>
+          <h3 className="script-font">Mohon Doa Restu</h3>
         </div>
 
         <div className={styles.profilesWrapper}>
@@ -36,12 +33,12 @@ export default function ProfileSection() {
             <div className={styles.imageWrapper}>
               <img src="/images/main foto andini.jpeg" alt="Andini" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/andini/400/500'; }} />
             </div>
-            <h2 className="name-font">Andini</h2>
-            <p className={styles.parentsInfo}>Putri dari Bapak NANA MULYANA</p>
+            <h2 className="serif-font uppercase">ANDINI</h2>
+            <p className={styles.parentsInfo}>Putri Bapak R. Santoso<br/>& Ibu R. Siti Aminah</p>
           </div>
 
-          <div className={styles.ampersand}>
-            <h2 className="name-font">&</h2>
+          <div className={styles.separator}>
+             <div className={styles.goldenDivider}></div>
           </div>
 
           {/* Groom Profile */}
@@ -49,9 +46,16 @@ export default function ProfileSection() {
             <div className={styles.imageWrapper}>
               <img src="/images/main foto syawal.jpeg" alt="Syawal" onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/sawal/400/500'; }} />
             </div>
-            <h2 className="name-font">Syawalludin</h2>
-            <p className={styles.parentsInfo}>Putra dari Bapak Sukardi</p>
+            <h2 className="serif-font uppercase">SYAWAL</h2>
+            <p className={styles.parentsInfo}>Putra Bapak H. Bambang Irawan<br/>& Ibu Hj. Siti Rohmah</p>
           </div>
+        </div>
+
+        <div className={styles.bottomText}>
+          <div className={styles.lineDivider}></div>
+          <p>
+            Dengan segala kerendahan hati, kami sekeluarga memohon doa restu dari Bapak/Ibu/Saudara/i sekalian agar pernikahan ini membawa kebahagiaan dan keberkahan bagi kedua mempelai.
+          </p>
         </div>
       </div>
     </section>

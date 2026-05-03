@@ -1,8 +1,9 @@
 .profileSection {
-  padding: 5rem 1rem;
+  padding: 8rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .container {
@@ -20,9 +21,11 @@
 }
 
 .greeting h3 {
-  font-size: 2rem;
-  color: #d4af37;
-  margin-bottom: 1rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(203, 163, 101, 0.2);
 }
 
 .greeting p {
@@ -35,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;
   width: 100%;
 }
 
@@ -59,22 +62,24 @@
 }
 
 .imageWrapper {
-  width: 280px;
-  height: 350px; /* 4:5 aspect ratio */
-  border-radius: 15px;
+  width: 260px;
+  height: 360px;
+  border-radius: 130px 130px 15px 15px; /* Elegant Arch shape */
   overflow: hidden;
-  border: 4px solid #d4af37;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 6px solid var(--primary-color);
+  box-shadow: 0 15px 35px rgba(203, 163, 101, 0.3);
   margin-bottom: 1.5rem;
   position: relative;
+  background-color: var(--bg-dark);
 }
 
 .imageWrapper::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.3);
+  box-shadow: inset 0 0 20px rgba(62, 39, 35, 0.5);
   pointer-events: none;
+  border-radius: 130px 130px 15px 15px;
 }
 
 .imageWrapper img {
@@ -89,44 +94,91 @@
 }
 
 .profileCard h2 {
-  font-size: 4rem;
-  color: #ffd700;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--text-dark);
   margin-bottom: 0.5rem;
+  letter-spacing: 2px;
 }
 
 .parentsInfo {
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  color: #ccc;
+  color: var(--text-dark);
   text-align: center;
-  font-style: italic;
+  line-height: 1.5;
+  opacity: 0.8;
 }
 
-.ampersand {
+.separator {
   opacity: 0;
   transition: opacity 1s ease 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.visible .ampersand {
+.visible .separator {
   opacity: 1;
 }
 
-.ampersand h2 {
-  font-size: 5rem;
-  color: #d4af37;
+.goldenDivider {
+  width: 100px;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.goldenDivider::after {
+  content: '❖';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  background-color: var(--bg-color);
+  padding: 0 10px;
+}
+
+.bottomText {
+  margin-top: 5rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+.lineDivider {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+  margin: 0 auto 2rem auto;
+}
+
+.bottomText p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
 }
 
 @media screen and (max-width: 768px) {
   .profilesWrapper {
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
   }
   
   .imageWrapper {
-    width: 240px;
-    height: 300px;
+    width: 220px;
+    height: 310px;
+    border-radius: 110px 110px 15px 15px;
   }
   
-  .ampersand h2 {
+  .goldenDivider {
+    width: 2px;
+    height: 60px;
+  }
+  
+  .greeting h3 {
     font-size: 3rem;
   }
 }

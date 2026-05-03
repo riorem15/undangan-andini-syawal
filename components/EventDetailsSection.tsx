@@ -25,33 +25,48 @@ export default function EventDetailsSection() {
     <section className={styles.eventSection}>
       <div className={styles.container}>
         <div className={styles.saveTheDate}>
-          <h2 className="script-font">Save The Date</h2>
+          <h2 className="name-font">Event & Information</h2>
+          <p className={styles.subtitle}>For the Wedding of Andini & Syawal</p>
           <div className={styles.countdown}>
-            <div className={styles.timeBox}><span>{timeLeft.days}</span><small>Hari</small></div>
-            <div className={styles.timeBox}><span>{timeLeft.hours}</span><small>Jam</small></div>
-            <div className={styles.timeBox}><span>{timeLeft.minutes}</span><small>Menit</small></div>
-            <div className={styles.timeBox}><span>{timeLeft.seconds}</span><small>Detik</small></div>
+            <div className={styles.timeBox}><span>{timeLeft.days}</span><small>DAYS</small></div>
+            <span className={styles.timeSeparator}>:</span>
+            <div className={styles.timeBox}><span>{timeLeft.hours}</span><small>HOURS</small></div>
+            <span className={styles.timeSeparator}>:</span>
+            <div className={styles.timeBox}><span>{timeLeft.minutes}</span><small>MINUTES</small></div>
+            <span className={styles.timeSeparator}>:</span>
+            <div className={styles.timeBox}><span>{timeLeft.seconds}</span><small>SECONDS</small></div>
           </div>
         </div>
 
         <div className={styles.eventDetails}>
-          <h2 className="script-font">Pernikahan</h2>
           <div className={styles.cardsContainer}>
-            <div className={`glass-panel ${styles.eventCard}`}>
-              <h3>Akad Nikah</h3>
+            <div className={styles.eventCard}>
+              <div className={styles.batikCorner}></div>
+              <h3 className="name-font">Akad Nikah</h3>
               <div className={styles.eventInfo}>
-                <p><strong>Sabtu</strong></p>
-                <p className={styles.date}>30 Mei 2026</p>
-                <p>Pukul 07.00 s/d Selesai</p>
+                <p><strong>Saturday, October 26th, 2026</strong></p>
+                <p>08:00 AM - 10:00 AM</p>
+                <br/>
+                <p>Pendopo Agung Hotel</p>
+                <p>Ambarrukmo, Yogyakarta</p>
+                <br/>
+                <p>Dress Code:</p>
+                <p>Traditional Javanese attire</p>
               </div>
             </div>
 
-            <div className={`glass-panel ${styles.eventCard}`}>
-              <h3>Resepsi</h3>
+            <div className={styles.eventCard}>
+              <div className={styles.batikCorner}></div>
+              <h3 className="name-font">Resepsi</h3>
               <div className={styles.eventInfo}>
-                <p><strong>Sabtu</strong></p>
-                <p className={styles.date}>30 Mei 2026</p>
-                <p>Pukul 10.00 s/d Selesai</p>
+                <p><strong>Saturday, October 26th, 2026</strong></p>
+                <p>11:00 AM - 02:00 PM</p>
+                <br/>
+                <p>The Grand Ballroom,</p>
+                <p>Hotel Ambarrukmo, Yogyakarta</p>
+                <br/>
+                <p>Dress Code:</p>
+                <p>Formal Javanese or Evening Wear</p>
               </div>
             </div>
           </div>

@@ -28,22 +28,8 @@ export default function CoverSection() {
 
         {/* Main Content */}
         <div className={styles.content}>
-          <h1 className="script-font">The Wedding of</h1>
+          <h1 className="script-font">The Wedding Of</h1>
           <h2 className="name-font">Andini & Syawal</h2>
-          
-          <div className={styles.photoContainer}>
-            <div className={styles.photoLeftWrapper}>
-               <img src="/images/main foto andini.jpeg" alt="Andini" className={styles.photoLeft} onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/andini/400/400'; }} />
-            </div>
-            <div className={styles.photoRightWrapper}>
-               <img src="/images/main foto syawal.jpeg" alt="Syawal" className={styles.photoRight} onError={(e) => { e.currentTarget.src = 'https://picsum.photos/seed/sawal/400/400'; }} />
-            </div>
-          </div>
-
-          <div className={styles.dateInfo}>
-             <p>30 Mei 2026 M</p>
-             <p>13 Dzulhijjah 1447 H</p>
-          </div>
         </div>
       </div>
 
